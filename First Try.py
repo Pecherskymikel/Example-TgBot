@@ -1,4 +1,4 @@
-#We have elready fucked this code for [3] hour
+#We have already fucked this code for [3] hour
 #When we started writing this code, only we and God understood what was written here. To be continued (at the end of the code)
 
 import telebot
