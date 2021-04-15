@@ -1,21 +1,17 @@
 #We have already fucked this code for [3] hour
-#When we started writing this code, only we and God understood what was written here. To be continued (at the end of the code)
+#When we started writing this code, only we and God understood what was written here. 
 
 import telebot
 from telebot import types
 
 #1768045491:AAHwrAOzQU9oOQvGpK0Lb4egMmIrt4ihT7k
 
-name = ''
-surname = ''
-age = 0
-
 bot = telebot.TeleBot("1768045491:AAHwrAOzQU9oOQvGpK0Lb4egMmIrt4ihT7k")
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):  #здесь мы хотим вывести Привет
 	#bot.reply_to(message, "Привет, чтобы узнать, что я умею вбей /skills")
-    bot.send_message(message.chat.id,"Добро пожаловать, {0.first_name}!\nЯ - <b>{1.first_name}</b>, бот созданный чтобы быть подопытным кроликом.\nЧтобы узнать мой функционал вбей <b>/skills</b>".format(message.from_user, bot.get_me()), parse_mode='html')
+    bot.send_message(message.chat.id,"Добро пожаловать, {0.first_name}!\nЯ - <b>{1.first_name}</b>, бот магазина...\nЧтобы узнать мой функционал вбей <b>/skills</b>".format(message.from_user, bot.get_me()), parse_mode='html')
 
 @bot.message_handler(commands=['skills', 'help'])
 def welcome(message):
@@ -28,11 +24,11 @@ def welcome(message):
 
     markup.add(item1, item2, item3, item4)
 
-    bot.send_message(message.chat.id, "Добро пожаловать, {0.first_name}!\nЯ - <b>{1.first_name}</b>, бот созданный чтобы быть подопытным кроликом.".format(message.from_user, bot.get_me()), parse_mode='html', reply_markup=markup)
+    bot.send_message(message.chat.id, "Что ты хочешь сделать?".format(message.from_user, bot.get_me()), parse_mode='html', reply_markup=markup)
 
 
 @bot.message_handler(content_types=['text'])
-def lalala(message):
+def buy(message):
         if message.text == "Купить":
             bot.send_message(message.chat.id, "Какой товар хотите купить?")
         elif message.text == 'О нас':
