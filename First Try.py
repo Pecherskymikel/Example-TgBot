@@ -1,5 +1,5 @@
 #We have already fucked this code for [5] hour
-#When we started writing this code, only we and God understood what was written here. To be continued (at the end of the code)
+#When we started writing this code, only we and God understood what was written here. To be continued (at the end of the code) Миша лох
 
 import telebot
 from telebot import types
